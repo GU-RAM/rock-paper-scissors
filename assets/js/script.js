@@ -23,6 +23,7 @@ btns.forEach((btn) => {
         gamer.textContent = gamerPoints;
         dev.textContent = devPoints;
         gameFinished();
+
     })
 })
 
