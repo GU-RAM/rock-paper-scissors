@@ -1,0 +1,62 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000;
+}
+
+img {
+    max-width: 100%;
+}
+
+
+ul {
+    list-style-type: none;
+}
+
+ul li {
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.game-wrapper {
+    min-height: calc(100vh - 20px);
+    background-color: burlywood;
+    border-radius: 20px;
+    margin-top: 10px;
+}
+
+.game-wrapper h1 {
+    margin-bottom: 40px;
+}
+
+.tie {
+    display: none;
+    font-size: 22px;
+}
+
+.pointWon {
+    border: 10px solid green;
+}
+
+.pointLost {
+    border: 10px solid red;
+}
+
+.tiePoints {
+    border: 10px solid blue;
+}
+
+.pointWon, .pointLost, .tiePoints {
+    border-radius: 50%;
+}
+
+
+@media only screen and (min-width: 560px) {
+.game-wrapper .row {
+    width: 50%;
+}
+}

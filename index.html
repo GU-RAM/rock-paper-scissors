@@ -11,16 +11,28 @@
     <script src="assets/js/jquery.min.js"></script>
     <script defer src="assets/js/bootstrap.bundle.min.js"></script>
 
+    <!-- style css -->
+    <link rel="stylesheet" href="assets/css/main.css">
+
     <!-- javascript -->
     <script defer src="assets/js/script.js"></script>
 </head>
 
 <body>
 
-    <main class="container">
-        <div class="row">
+    <main class="game-wrapper container d-flex">
+        <div class="row m-auto">
             <div class="col">
-                <h1>gurami</h1>
+                <h1 class="text-center hint">Let's Play</h1>
+                <h1 class="points text-center"><span id="gamer">Gamer</span> : <span id="dev">Dev</span>
+
+                </h1>
+                <div class="tie text-center">Tie</div>
+                <ul class="d-flex justify-content-between">
+                    <li class="btn paper"><img src="./assets/img/peper.png" alt=""></li>
+                    <li class="btn rock"><img src="./assets/img/rock.png" alt=""></li>
+                    <li class="btn scissors"><img src="./assets/img/scissors.png" alt=""></li>
+                </ul>
             </div>
         </div>
     </main>
