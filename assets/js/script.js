@@ -11,6 +11,8 @@ btns.forEach((btn) => {
     btn.addEventListener('click', (e) => {
         const devChoice = Math.floor(Math.random() * 3);
         const type = e.currentTarget.classList;
+        console.log("type", type)
+
         hintGamer.style.display = 'none';
         for (let i = 0; i < btns.length; i++) {
             btns[i].classList.remove("pointWon");
@@ -49,16 +51,19 @@ const updatePoints = (targetElement, currentDevButtonIndex) => {
         gamerPoints += 0;
         devPoints += 1;
         btns[0].classList.add("pointLost"); //gamer lost point
+        btns[currentDevButtonIndex].classList.add("pointWon");
     } else if (targetElement.contains('paper') && btns[currentDevButtonIndex].classList.contains('scissors')) {
         gamerPoints += 1;
         devPoints += 0;
         btns[0].classList.add("pointWon"); // gamer won point
+        btns[currentDevButtonIndex].classList.add("pointLost");
     }
 
     if (targetElement.contains('rock') && btns[currentDevButtonIndex].classList.contains('paper')) {
         gamerPoints += 0;
         devPoints += 1;
         btns[1].classList.add("pointLost"); //gamer lost point
+        btns[currentDevButtonIndex].classList.add("pointWon");
     } else if (targetElement.contains('rock') && btns[currentDevButtonIndex].classList.contains('rock')) {
         btns[1].classList.add("tiePoints"); // tie
         tie.style.display = 'block';
@@ -66,16 +71,19 @@ const updatePoints = (targetElement, currentDevButtonIndex) => {
         gamerPoints += 1;
         devPoints += 0;
         btns[1].classList.add("pointWon"); // gamer won point
+        btns[currentDevButtonIndex].classList.add("pointLost");
     }
 
     if (targetElement.contains('scissors') && btns[currentDevButtonIndex].classList.contains('paper')) {
         gamerPoints += 1;
         devPoints += 0;
         btns[2].classList.add("pointWon");  // gamer won point
+        btns[currentDevButtonIndex].classList.add("pointLost");
     } else if (targetElement.contains('scissors') && btns[currentDevButtonIndex].classList.contains('rock')) {
         gamerPoints += 0;
         devPoints += 1;
         btns[2].classList.add("pointLost"); //gamer lost point
+        btns[currentDevButtonIndex].classList.add("pointWon");
     } else if (targetElement.contains('scissors') && btns[currentDevButtonIndex].classList.contains('scissors')) {
         btns[2].classList.add("tiePoints"); // tie
         tie.style.display = 'block';
